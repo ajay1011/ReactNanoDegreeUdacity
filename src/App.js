@@ -103,16 +103,15 @@ class App extends Component {
   constructor(props){
   super(props);
     
-  this.usersByMovies = {};
+  this.usersByMovie = {};
   profiles.forEach(profile=>{
-    const movieId = profile.favouriteMovieID;
+    const movieId = profile.favoriteMovieID;
     
-    if(this.usersByMovies[movieId]){
-      this.usersByMovies[movieId].push(profile.userID);
-    }
-    else{
-      this.usersByMovies[movieId] = profile.userID;
-    }
+    if (this.usersByMovie[movieId]) {
+        this.usersByMovie[movieId].push(profile.userID);
+      } else {
+        this.usersByMovie[movieId] = [profile.userID];
+      }
   });
      
   }
@@ -128,7 +127,7 @@ class App extends Component {
 		profiles={profiles}
 		movies = {movies}
 		users = {users}
-		userByMovies = {this.usersByMovies}
+		userByMovies = {this.usersByMovie}
 		/>
         
       </div>

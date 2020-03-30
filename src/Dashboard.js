@@ -23,4 +23,4 @@ render(){
 
 }
 
-export Default MovieCardsList;
+export default MovieCardsList;
